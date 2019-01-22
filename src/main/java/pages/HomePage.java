@@ -18,6 +18,6 @@ public class HomePage extends DriverLoader {
     private WebElement menu;
 
     public void selectMenuItem(String value){
-        menu.findElement(By.xpath(".//a[contains(text(), '"+value+"')]"));
+        menu.findElement(By.xpath(".//a[contains(text(), '"+value+"')]")).click();
     }
 }
