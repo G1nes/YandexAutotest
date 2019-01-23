@@ -15,13 +15,13 @@ public class ExtendedSearch extends DriverLoader {
         (new WebDriverWait(driver,15)).until(ExpectedConditions.visibilityOf(priceFromField));
     }
     @FindBy(xpath = "//input[@id = 'glf-pricefrom-var']")
-    WebElement priceFromField;
+    public WebElement priceFromField;
 
     @FindBy(xpath = "//div[contains(@data-filter-id,'7893318')]")
     WebElement checkBoxBar;
 
     @FindBy(xpath = "//a[contains(@data-bem,'hid=90639')]")
-    WebElement applySettings;
+    public WebElement applySettings;
 
     public void selectModelType(String value){
         checkBoxBar.findElement(By.xpath("//label[text()='"+value+"']/./preceding-sibling::span[@class='checkBoxBar__box']"));

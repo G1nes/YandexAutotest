@@ -10,7 +10,7 @@ public class Property {
     private Properties properties = new Properties();
     private Property(){
         try {
-            properties.load(new FileInputStream(new File("E:\\YandexAutotest\\src\\main\\java\\util\\settings.properties")));
+            properties.load(new FileInputStream(new File("C:\\Program Files\\Repositories\\YandexAutotest\\src\\main\\java\\util\\settings.properties")));
         }catch (Exception e){
             e.getStackTrace();
         }

@@ -15,6 +15,7 @@ public abstract class DriverLoader {
     private static Properties setProperties = Property.getInstance().getProperties();
     private static String url;
     private static WebDriver driver;
+    public static String recordedElementName;
     @BeforeClass
     public static void setUp(){
     switch (setProperties.getProperty("browser")){

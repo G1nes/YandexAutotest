@@ -14,5 +14,5 @@ public class SearchResult extends DriverLoader {
         (new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOf(modelName));
     }
     @FindBy(xpath = "//h1[contains(@class,'title_size_28')]")
-    WebElement modelName;
+    public WebElement modelName;
 }
