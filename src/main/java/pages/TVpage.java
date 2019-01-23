@@ -21,6 +21,7 @@ public class TVpage extends DriverLoader {
     public String getTwelveElementsXpath(){
         return twelveElementsXpath;
     }
+
     @FindBy(xpath = "//a[contains(@class, 'Ocaft')]")
     public WebElement allFiltersBtn;
 
@@ -43,7 +44,7 @@ public class TVpage extends DriverLoader {
     public WebElement headerSearchBtn;
 
     public void selectNShowElements(int count){
-        showBtn.findElement(By.xpath("//span[text()='Показывать по "+count+"']/ancestor::span")).click();
+        showBtn.findElement(By.xpath("//span[text()='Показывать по "+count+"']")).click();
     }
     public String selectNElementName(int count){
         String tmp = ListRecordName.findElement(By.xpath(".//div["+count+"]//a[contains(@class,'theme_blue link_type_cpc')]")).getText();

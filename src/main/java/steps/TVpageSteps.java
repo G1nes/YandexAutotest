@@ -1,8 +1,6 @@
 package steps;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import pages.TVpage;
 import ru.yandex.qatools.allure.annotations.Step;
 import util.DriverLoader;
