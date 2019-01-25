@@ -10,8 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import util.DriverLoader;
 
 public class HomePage extends DriverLoader {
+    public WebDriver driver;
+    public HomePage(){
+    }
     public HomePage (WebDriver driver){
-        PageFactory.initElements(getDriver(), this);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
         (new WebDriverWait(driver,15)).until(ExpectedConditions.visibilityOf(menu));
     }
     @FindBy (xpath = "//div[@class = 'home-arrow__tabs']")

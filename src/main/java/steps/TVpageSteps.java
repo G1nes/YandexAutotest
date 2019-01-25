@@ -1,38 +1,39 @@
 package steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import pages.TVpage;
-import ru.yandex.qatools.allure.annotations.Step;
 import util.DriverLoader;
 
-public class TVpageSteps extends DriverLoader {
+public class TVpageSteps extends HomePageSteps {
 
     @Step
     public void selectExtendedSearchBtn(){
-        new TVpage(getDriver()).allFiltersBtn.click();
+        new TVpage(driver).allFiltersBtn.click();
     }
+
     @Step
     public void selectShowCountElementsBtv(){
-        new TVpage(getDriver()).showBtn.click();
+        new TVpage(driver).showBtn.click();
     }
     @Step
     public void selectNShowElements(int count){
-        new TVpage(getDriver()).selectNShowElements(count);
+        new TVpage(driver).selectNShowElements(count);
     }
     @Step
     public void checkElementsCount(){
-        getDriver().findElement(By.xpath(new TVpage(getDriver()).getTwelveElementsXpath()));
+        driver.findElement(By.xpath(new TVpage(driver).getTwelveElementsXpath()));
     }
     @Step
     public void recordNElementOfListName(int count){
-        recordedElementName = new TVpage(getDriver()).selectNElementName(count);
+        DriverLoader.recordedElementName = new TVpage(driver).selectNElementName(count);
     }
     @Step
     public void inputSearchRequest(){
-        fillField(new TVpage(getDriver()).headerSearchLine, recordedElementName);
+        DriverLoader.fillField(new TVpage(driver).headerSearchLine, DriverLoader.recordedElementName);
     }
     @Step
     public void selectSearchBtn(){
-        new TVpage(getDriver()).headerSearchBtn.click();
+        new TVpage(driver).headerSearchBtn.click();
     }
 }

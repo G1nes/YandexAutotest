@@ -1,16 +1,15 @@
 package steps;
 
+import io.qameta.allure.Step;
 import pages.MarketMain;
-import ru.yandex.qatools.allure.annotations.Step;
-import util.DriverLoader;
 
-public class MarketMainSteps extends DriverLoader {
+public class MarketMainSteps extends HomePageSteps {
     @Step
     public void moveToMainMenuElement(String value){
-        new MarketMain(getDriver()).selectMenuItem(value);
+        new MarketMain(driver).selectMenuItem(value);
     }
     @Step
     public void selectSubMenuItem(String value){
-        new MarketMain(getDriver()).selectSubMenuItem(value);
+        new MarketMain(driver).selectSubMenuItem(value);
     }
 }

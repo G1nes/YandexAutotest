@@ -1,22 +1,21 @@
 package util;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public abstract class DriverLoader {
-    private static Properties setProperties = Property.getInstance().getProperties();
-    private static String url;
-    private static WebDriver driver;
+    //private static Properties setProperties = Property.getInstance().getProperties();
+    //private static String url;
+    //private static WebDriver driver;
     public static String recordedElementName;
-    @BeforeClass
+    /*@Before
     public static void setUp(){
     switch (setProperties.getProperty("browser")){
         case "chrome" :
@@ -38,18 +37,18 @@ public abstract class DriverLoader {
     driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
     driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
     }
-    @AfterClass
+    @After
     public static void endTest(){
         driver.quit();
-    }
-    public static WebDriver getDriver(){
+    }*/
+    /*public static WebDriver getDriver(){
         return driver;
-    }
-    public void nextTab (){
-        ArrayList<String>tabs = new ArrayList<>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(tabs.size()-1));
-    }
-    public void fillField (WebElement element, String value){
+    }*/
+    //public void nextTab (){
+    //    ArrayList<String>tabs = new ArrayList<>(driver.getWindowHandles());
+    //    driver.switchTo().window(tabs.get(tabs.size()-1));
+    //}
+    public static void fillField (WebElement element, String value){
         element.clear();
         element.sendKeys(value);
     }

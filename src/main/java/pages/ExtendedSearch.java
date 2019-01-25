@@ -9,9 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.DriverLoader;
 
-public class ExtendedSearch extends DriverLoader {
+public class ExtendedSearch extends HomePage {
     public ExtendedSearch (WebDriver driver){
-        PageFactory.initElements(getDriver(),this);
+        PageFactory.initElements(driver,this);
         (new WebDriverWait(driver,15)).until(ExpectedConditions.visibilityOf(priceFromField));
     }
     @FindBy(xpath = "//input[@id = 'glf-pricefrom-var']")

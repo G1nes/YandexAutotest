@@ -1,12 +1,35 @@
-/*package steps;
+package tests;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import steps.*;
 
-public class ScenarioCucumberTest {
+import java.util.concurrent.TimeUnit;
+
+
+public class TestRunner {
+    public static WebDriver driver;
+    @Before
+    public void setUp(){
+        System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.get("https://yandex.ru");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
+    }
+    @After
+    public static void endTest(){
+        driver.quit();
+    }
+
     @When("^перейти на страницу (.+)$")
     public void goToSomePage(String pageName){
-        new HomePageSteps().selectMenuItem(pageName);
+        new HomePageSteps(driver).selectMenuItem(pageName);
     }
     @When("^выбрали пункт меню (.+) без нажатия$")
     public void choseSomeMenuItem(String value){
@@ -64,4 +87,3 @@ public class ScenarioCucumberTest {
         new SearchResultSteps().assertModelName();
     }
 }
-*/

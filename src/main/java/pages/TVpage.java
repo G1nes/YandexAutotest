@@ -1,7 +1,5 @@
 package pages;
 
-import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,9 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.DriverLoader;
 
-public class TVpage extends DriverLoader {
+public class TVpage extends HomePage {
     public TVpage(WebDriver driver){
-        PageFactory.initElements(getDriver(),this);
+        PageFactory.initElements(driver,this);
         (new WebDriverWait(driver, 15)).until(ExpectedConditions.visibilityOf(allFiltersBtn));
     }
     private String twelveElementsXpath = "//div[contains(@data-bem,'\"count\":12')]";
